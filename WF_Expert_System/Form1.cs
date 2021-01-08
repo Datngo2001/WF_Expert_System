@@ -17,5 +17,10 @@ namespace WF_Expert_System
             InitializeComponent();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Button button = new Button();
+
+        }
     }
 }

@@ -47,7 +47,7 @@ namespace WF_Expert_System
 
                         // Them phan sau THEN vao rule
                         List<string> resultParts = new List<string>();
-                        resultParts.AddRange(ruleParts[1].Split("=", 2));
+                        resultParts.AddRange(ruleParts[1].Split(":", 2));
                         Parameter result = new Parameter();
                         resultParts[0] = resultParts[0].Trim();
                         result.Name = resultParts[0];
@@ -57,7 +57,7 @@ namespace WF_Expert_System
 
                         // Them phan truoc THEN vao rule
                         List<string> conditions = new List<string>();
-                        conditions.AddRange(ruleParts[0].Split("&"));
+                        conditions.AddRange(ruleParts[0].Split(","));
                         for (int i = 0; i < conditions.Count; i++)
                         {
                             List<string> conditionPart = new List<string>();
