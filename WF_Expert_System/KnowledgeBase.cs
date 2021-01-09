@@ -31,6 +31,7 @@ namespace WF_Expert_System
                 
                 while (!reader.EndOfStream)
                 {
+
                     string line = reader.ReadLine();
                     line = line.TrimStart();
 
@@ -39,7 +40,7 @@ namespace WF_Expert_System
                     if (line.StartsWith("IF"))
                     {
                         Rule rule = new Rule();
-
+                        
                         line = line.Remove(0, 2); //Xoa IF
 
                         List<string> ruleParts = new List<string>();
@@ -61,7 +62,7 @@ namespace WF_Expert_System
                         for (int i = 0; i < conditions.Count; i++)
                         {
                             List<string> conditionPart = new List<string>();
-                            conditionPart.AddRange(conditions[i].Split("=", 2));
+                            conditionPart.AddRange(conditions[i].Split(":", 2));
                             Parameter condition = new Parameter();
                             conditionPart[0] = conditionPart[0].Trim();
                             condition.Name = conditionPart[0];

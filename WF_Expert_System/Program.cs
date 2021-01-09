@@ -14,11 +14,12 @@ namespace WF_Expert_System
         [STAThread]
         static void Main()
         {
+            KnowledgeBase knowledgeBase = new KnowledgeBase(@"C:\Users\supod\source\repos\WF_Expert_System\WF_Expert_System\Knowlegde.txt");
+
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
-            KnowledgeBase knowledgeBase = new KnowledgeBase(@"C:\Users\Thien Nguyen\WF_Expert_System\WF_Expert_System\Knowlegde.txt");
             InferenceEngine inferenceEngine = new InferenceEngine(knowledgeBase);
             inferenceEngine.Start();
             inferenceEngine.ShowResult();
