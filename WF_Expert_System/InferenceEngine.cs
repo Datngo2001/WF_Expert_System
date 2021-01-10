@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Windows.Forms;
 
 namespace WF_Expert_System
 {
@@ -23,11 +23,6 @@ namespace WF_Expert_System
         }
         public void Start()
         {
-            for (int i = 0; i < Base.Parameters.Count; i++)
-            {
-                Base.Parameters[i].Value = askPeople(Base.Parameters[i]);
-                Facts.Add(Base.Parameters[i]);
-            }
             do
             {
                 for (int i = 0; i < Base.Rules.Count; i++)
@@ -100,8 +95,8 @@ namespace WF_Expert_System
         {
             string question = "";
             question = "Ban co " + parameter.Name + " khong? (Co/Khong)";
-            Console.WriteLine(question);
-            if (ToBool(Console.ReadLine()))
+            DialogResult answer = MessageBox.Show(question, "Question", MessageBoxButtons.YesNo);
+            if (answer == DialogResult.Yes)
             {
                 return true;
             }
