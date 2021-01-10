@@ -32,11 +32,11 @@ namespace WF_Expert_System
             this.button2 = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.checkedListBox = new System.Windows.Forms.CheckedListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Start = new System.Windows.Forms.Button();
             this.Reset = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.checkedListBox = new System.Windows.Forms.CheckedListBox();
             this.SuspendLayout();
             // 
             // button2
@@ -57,7 +57,6 @@ namespace WF_Expert_System
             this.richTextBox1.Size = new System.Drawing.Size(272, 320);
             this.richTextBox1.TabIndex = 4;
             this.richTextBox1.Text = "";
-            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // richTextBox2
             // 
@@ -67,15 +66,6 @@ namespace WF_Expert_System
             this.richTextBox2.Size = new System.Drawing.Size(760, 144);
             this.richTextBox2.TabIndex = 5;
             this.richTextBox2.Text = "";
-            this.richTextBox2.TextChanged += new System.EventHandler(this.button1_Click);
-            // 
-            // checkedListBox
-            // 
-            this.checkedListBox.FormattingEnabled = true;
-            this.checkedListBox.Location = new System.Drawing.Point(16, 65);
-            this.checkedListBox.Name = "checkedListBox";
-            this.checkedListBox.Size = new System.Drawing.Size(264, 340);
-            this.checkedListBox.TabIndex = 13;
             // 
             // label1
             // 
@@ -85,7 +75,6 @@ namespace WF_Expert_System
             this.label1.Size = new System.Drawing.Size(157, 25);
             this.label1.TabIndex = 14;
             this.label1.Text = "How do you feel ?";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // Start
             // 
@@ -95,6 +84,7 @@ namespace WF_Expert_System
             this.Start.TabIndex = 15;
             this.Start.Text = "Start";
             this.Start.UseVisualStyleBackColor = true;
+            this.Start.Click += new System.EventHandler(this.Start_Click);
             // 
             // Reset
             // 
@@ -104,6 +94,7 @@ namespace WF_Expert_System
             this.Reset.TabIndex = 16;
             this.Reset.Text = "Reset";
             this.Reset.UseVisualStyleBackColor = true;
+            this.Reset.Click += new System.EventHandler(this.Reset_Click);
             // 
             // label2
             // 
@@ -113,6 +104,14 @@ namespace WF_Expert_System
             this.label2.Size = new System.Drawing.Size(59, 25);
             this.label2.TabIndex = 17;
             this.label2.Text = "Result";
+            // 
+            // checkedListBox
+            // 
+            this.checkedListBox.FormattingEnabled = true;
+            this.checkedListBox.Location = new System.Drawing.Point(16, 60);
+            this.checkedListBox.Name = "checkedListBox";
+            this.checkedListBox.Size = new System.Drawing.Size(264, 340);
+            this.checkedListBox.TabIndex = 13;
             // 
             // Form1
             // 
@@ -141,11 +140,11 @@ namespace WF_Expert_System
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.RichTextBox richTextBox2;
-        private System.Windows.Forms.CheckedListBox checkedListBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button Start;
         private System.Windows.Forms.Button Reset;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.CheckedListBox checkedListBox;
     }
 }
 
