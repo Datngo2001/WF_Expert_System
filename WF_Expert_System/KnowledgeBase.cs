@@ -7,16 +7,7 @@ namespace WF_Expert_System
 {
     class KnowledgeBase
     {
-        public FileStream file
-        {
-            get;
-            protected set;
-        }
-        public StreamReader Reader
-        {
-            get;
-            protected set;
-        }
+        
         public String AllText
         {
             get;
@@ -34,16 +25,15 @@ namespace WF_Expert_System
             get { return parameters; }
             set { parameters = value; }
         }
-        public KnowledgeBase()
+        public KnowledgeBase(string path)
         {
-            Parse();
+            Parse(path);
         }
-        public void Parse()
+        public void Parse(string path)
         {
             try
             {
-                file = new FileStream("Knowlegde.txt", FileMode.OpenOrCreate, FileAccess.ReadWrite);
-                Reader = new StreamReader(file);
+                StreamReader Reader = new StreamReader(path);
                 
                 while (!Reader.EndOfStream)
                 {
@@ -100,7 +90,6 @@ namespace WF_Expert_System
                     }
                 }
                 Reader.Close();
-                file.Close();
             }
             catch (Exception e)
             {
