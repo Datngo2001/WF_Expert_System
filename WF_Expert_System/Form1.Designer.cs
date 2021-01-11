@@ -29,43 +29,51 @@ namespace WF_Expert_System
         /// </summary>
         private void InitializeComponent()
         {
-            this.button2 = new System.Windows.Forms.Button();
+            this.Edit_btn = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.viewKnowLedge = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Start = new System.Windows.Forms.Button();
             this.Reset = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.checkedListBox = new System.Windows.Forms.CheckedListBox();
+            this.End_editting_btn = new System.Windows.Forms.Button();
+            this.Save_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button2
+            // Edit_btn
             // 
-            this.button2.Location = new System.Drawing.Point(652, 460);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(111, 34);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.Edit_btn.AutoSize = true;
+            this.Edit_btn.Location = new System.Drawing.Point(16, 434);
+            this.Edit_btn.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.Edit_btn.Name = "Edit_btn";
+            this.Edit_btn.Size = new System.Drawing.Size(217, 35);
+            this.Edit_btn.TabIndex = 2;
+            this.Edit_btn.Text = "Edit Know ledge";
+            this.Edit_btn.UseVisualStyleBackColor = true;
+            this.Edit_btn.Click += new System.EventHandler(this.EditKnoledgeBase_Click);
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(511, 65);
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.richTextBox1.Location = new System.Drawing.Point(511, 60);
             this.richTextBox1.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(272, 320);
+            this.richTextBox1.Size = new System.Drawing.Size(272, 340);
             this.richTextBox1.TabIndex = 4;
             this.richTextBox1.Text = "";
             // 
-            // richTextBox2
+            // viewKnowLedge
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(23, 521);
-            this.richTextBox2.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(760, 144);
-            this.richTextBox2.TabIndex = 5;
-            this.richTextBox2.Text = "";
+            this.viewKnowLedge.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.viewKnowLedge.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.viewKnowLedge.Location = new System.Drawing.Point(0, 502);
+            this.viewKnowLedge.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.viewKnowLedge.Name = "viewKnowLedge";
+            this.viewKnowLedge.ReadOnly = true;
+            this.viewKnowLedge.Size = new System.Drawing.Size(800, 312);
+            this.viewKnowLedge.TabIndex = 5;
+            this.viewKnowLedge.Text = "";
             // 
             // label1
             // 
@@ -78,7 +86,7 @@ namespace WF_Expert_System
             // 
             // Start
             // 
-            this.Start.Location = new System.Drawing.Point(337, 65);
+            this.Start.Location = new System.Drawing.Point(342, 60);
             this.Start.Name = "Start";
             this.Start.Size = new System.Drawing.Size(112, 34);
             this.Start.TabIndex = 15;
@@ -88,7 +96,7 @@ namespace WF_Expert_System
             // 
             // Reset
             // 
-            this.Reset.Location = new System.Drawing.Point(337, 128);
+            this.Reset.Location = new System.Drawing.Point(342, 125);
             this.Reset.Name = "Reset";
             this.Reset.Size = new System.Drawing.Size(112, 34);
             this.Reset.TabIndex = 16;
@@ -113,22 +121,46 @@ namespace WF_Expert_System
             this.checkedListBox.Size = new System.Drawing.Size(264, 340);
             this.checkedListBox.TabIndex = 13;
             // 
+            // End_editting_btn
+            // 
+            this.End_editting_btn.AutoSize = true;
+            this.End_editting_btn.Location = new System.Drawing.Point(255, 434);
+            this.End_editting_btn.Name = "End_editting_btn";
+            this.End_editting_btn.Size = new System.Drawing.Size(186, 35);
+            this.End_editting_btn.TabIndex = 18;
+            this.End_editting_btn.Text = "End Editing";
+            this.End_editting_btn.UseVisualStyleBackColor = true;
+            this.End_editting_btn.Click += new System.EventHandler(this.End_editting_btn_Click);
+            // 
+            // Save_btn
+            // 
+            this.Save_btn.AutoSize = true;
+            this.Save_btn.Location = new System.Drawing.Point(488, 434);
+            this.Save_btn.Name = "Save_btn";
+            this.Save_btn.Size = new System.Drawing.Size(112, 35);
+            this.Save_btn.TabIndex = 19;
+            this.Save_btn.Text = "Save";
+            this.Save_btn.UseVisualStyleBackColor = true;
+            this.Save_btn.Click += new System.EventHandler(this.Save_btn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 814);
+            this.Controls.Add(this.Save_btn);
+            this.Controls.Add(this.End_editting_btn);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Reset);
             this.Controls.Add(this.Start);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.checkedListBox);
-            this.Controls.Add(this.richTextBox2);
+            this.Controls.Add(this.viewKnowLedge);
             this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.Edit_btn);
             this.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Expert system: Diagnose the disease";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -137,14 +169,16 @@ namespace WF_Expert_System
 
         #endregion
         
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.RichTextBox viewKnowLedge;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button Start;
         private System.Windows.Forms.Button Reset;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckedListBox checkedListBox;
+        private System.Windows.Forms.Button Edit_btn;
+        private System.Windows.Forms.Button Save_btn;
+        private System.Windows.Forms.Button End_editting_btn;
     }
 }
 

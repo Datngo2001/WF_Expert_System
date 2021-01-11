@@ -7,6 +7,21 @@ namespace WF_Expert_System
 {
     class KnowledgeBase
     {
+        public FileStream file
+        {
+            get;
+            protected set;
+        }
+        public StreamReader Reader
+        {
+            get;
+            protected set;
+        }
+        public String AllText
+        {
+            get;
+            protected set;
+        }
         protected List<Rule> rules = new List<Rule>();
         public List<Rule> Rules
         {
@@ -19,20 +34,22 @@ namespace WF_Expert_System
             get { return parameters; }
             set { parameters = value; }
         }
-        public KnowledgeBase(string path)
+        public KnowledgeBase()
         {
-            Parse(path);
+            Parse();
         }
-        public void Parse(string path)
+        public void Parse()
         {
             try
             {
-                StreamReader reader = new StreamReader(path);
+                file = new FileStream("Knowlegde.txt", FileMode.OpenOrCreate, FileAccess.ReadWrite);
+                Reader = new StreamReader(file);
                 
-                while (!reader.EndOfStream)
+                while (!Reader.EndOfStream)
                 {
 
-                    string line = reader.ReadLine();
+                    string line = Reader.ReadLine();
+                    AllText = AllText + line + '\n';
                     line = line.TrimStart();
 
                     if (line == "" || line[0] == '-' || line[0] == '#') continue;
@@ -82,7 +99,8 @@ namespace WF_Expert_System
                         Parameters.Add(parameter);
                     }
                 }
-                reader.Close();
+                Reader.Close();
+                file.Close();
             }
             catch (Exception e)
             {
