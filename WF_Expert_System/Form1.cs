@@ -16,7 +16,7 @@ namespace WF_Expert_System
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            knowledgeBase = new KnowledgeBase(@"C:\Users\supod\source\repos\WF_Expert_System\WF_Expert_System\Knowlegde.txt");
+            knowledgeBase = new KnowledgeBase(@"C:\Users\admin\Source\Repos\WF_Expert_Systemoffz\WF_Expert_System\Knowlegde.txt");
             inferenceEngine = new InferenceEngine(knowledgeBase);
             for (int i = 0; i < inferenceEngine.Base.Parameters.Count; i++)
             {
@@ -40,7 +40,31 @@ namespace WF_Expert_System
             }
             inferenceEngine.Facts.AddRange(inferenceEngine.Base.Parameters);
             inferenceEngine.Start();
-            inferenceEngine.ShowResult();
+            string ab =inferenceEngine.ShowResult();
+            string a = "";
+            string b = "";
+            int i = 0;
+            for(; i < ab.Length;i++)
+            {
+                if(ab[i]=='?')
+                {
+                    break;
+                }
+                else
+                {
+                    a += ab[i];
+                }
+            }
+            for(int j = i+1;j<ab.Length;j++)
+            {
+                b += ab[j];
+            } // Tách a và b từ chuỗi ab (Với a là bệnh, b là lời khuyên)
+            richTextBox1.Text = "Co the ban bi: \n" + a + "\n" + "Ban nen: \n" + b; 
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -41,46 +41,49 @@ namespace WF_Expert_System
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(652, 460);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.button2.Location = new System.Drawing.Point(522, 368);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(111, 34);
+            this.button2.Size = new System.Drawing.Size(89, 27);
             this.button2.TabIndex = 2;
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(511, 65);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.richTextBox1.Location = new System.Drawing.Point(409, 52);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(272, 320);
+            this.richTextBox1.Size = new System.Drawing.Size(218, 257);
             this.richTextBox1.TabIndex = 4;
             this.richTextBox1.Text = "";
+            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // richTextBox2
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(23, 521);
-            this.richTextBox2.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.richTextBox2.Location = new System.Drawing.Point(18, 417);
+            this.richTextBox2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(760, 144);
+            this.richTextBox2.Size = new System.Drawing.Size(609, 116);
             this.richTextBox2.TabIndex = 5;
             this.richTextBox2.Text = "";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(27, 20);
+            this.label1.Location = new System.Drawing.Point(22, 16);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(157, 25);
+            this.label1.Size = new System.Drawing.Size(130, 20);
             this.label1.TabIndex = 14;
             this.label1.Text = "How do you feel ?";
             // 
             // Start
             // 
-            this.Start.Location = new System.Drawing.Point(337, 65);
+            this.Start.Location = new System.Drawing.Point(270, 52);
+            this.Start.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Start.Name = "Start";
-            this.Start.Size = new System.Drawing.Size(112, 34);
+            this.Start.Size = new System.Drawing.Size(90, 27);
             this.Start.TabIndex = 15;
             this.Start.Text = "Start";
             this.Start.UseVisualStyleBackColor = true;
@@ -88,9 +91,10 @@ namespace WF_Expert_System
             // 
             // Reset
             // 
-            this.Reset.Location = new System.Drawing.Point(337, 128);
+            this.Reset.Location = new System.Drawing.Point(270, 102);
+            this.Reset.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Reset.Name = "Reset";
-            this.Reset.Size = new System.Drawing.Size(112, 34);
+            this.Reset.Size = new System.Drawing.Size(90, 27);
             this.Reset.TabIndex = 16;
             this.Reset.Text = "Reset";
             this.Reset.UseVisualStyleBackColor = true;
@@ -99,25 +103,27 @@ namespace WF_Expert_System
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(541, 20);
+            this.label2.Location = new System.Drawing.Point(433, 16);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 25);
+            this.label2.Size = new System.Drawing.Size(49, 20);
             this.label2.TabIndex = 17;
             this.label2.Text = "Result";
             // 
             // checkedListBox
             // 
             this.checkedListBox.FormattingEnabled = true;
-            this.checkedListBox.Location = new System.Drawing.Point(16, 60);
+            this.checkedListBox.Location = new System.Drawing.Point(13, 48);
+            this.checkedListBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkedListBox.Name = "checkedListBox";
-            this.checkedListBox.Size = new System.Drawing.Size(264, 340);
+            this.checkedListBox.Size = new System.Drawing.Size(212, 268);
             this.checkedListBox.TabIndex = 13;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 814);
+            this.ClientSize = new System.Drawing.Size(640, 651);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Reset);
             this.Controls.Add(this.Start);
@@ -126,7 +132,7 @@ namespace WF_Expert_System
             this.Controls.Add(this.richTextBox2);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.button2);
-            this.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
