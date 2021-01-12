@@ -69,15 +69,15 @@ namespace WF_Expert_System
             } while (FactIncrease());
 
         }
-        public void ShowResult()
+        public string ShowResult()
         {
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("Co the ban bi: ");
+            string a = "";
+            string b = "";
             for (int i = 0; i < Facts.Count; i++)
             {
                 if (Facts[i].Name.EndsWith('*') && Facts[i].Value == true)
                 {
-                    Console.WriteLine(Facts[i].Name.Remove(Facts[i].Name.Length - 1, 1));
+                    a += Facts[i].Name.Remove(Facts[i].Name.Length - 1, 1) + "\n";
                 }
             }
             Console.WriteLine();
@@ -86,10 +86,10 @@ namespace WF_Expert_System
             {
                 if (Facts[i].Name.EndsWith('+') && Facts[i].Value == true)
                 {
-                    Console.WriteLine(Facts[i].Name.Remove(Facts[i].Name.Length - 1, 1));
+                    b += Facts[i].Name.Remove(Facts[i].Name.Length - 1, 1) + "\n";
                 }
             }
-            Console.ResetColor();
+            return a + "?" + b;
         }
         protected bool askPeople(Parameter parameter)
         {

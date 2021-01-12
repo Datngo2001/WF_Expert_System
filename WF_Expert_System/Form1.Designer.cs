@@ -56,29 +56,29 @@ namespace WF_Expert_System
             // richTextBox1
             // 
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.richTextBox1.Location = new System.Drawing.Point(511, 60);
+            this.richTextBox1.Location = new System.Drawing.Point(741, 60);
             this.richTextBox1.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(272, 340);
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.Size = new System.Drawing.Size(366, 340);
             this.richTextBox1.TabIndex = 4;
             this.richTextBox1.Text = "";
             // 
             // viewKnowLedge
             // 
             this.viewKnowLedge.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.viewKnowLedge.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.viewKnowLedge.Location = new System.Drawing.Point(0, 502);
+            this.viewKnowLedge.Location = new System.Drawing.Point(11, 502);
             this.viewKnowLedge.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.viewKnowLedge.Name = "viewKnowLedge";
             this.viewKnowLedge.ReadOnly = true;
-            this.viewKnowLedge.Size = new System.Drawing.Size(800, 312);
+            this.viewKnowLedge.Size = new System.Drawing.Size(1096, 299);
             this.viewKnowLedge.TabIndex = 5;
             this.viewKnowLedge.Text = "";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(27, 20);
+            this.label1.Location = new System.Drawing.Point(11, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(157, 25);
             this.label1.TabIndex = 14;
@@ -86,7 +86,7 @@ namespace WF_Expert_System
             // 
             // Start
             // 
-            this.Start.Location = new System.Drawing.Point(342, 60);
+            this.Start.Location = new System.Drawing.Point(488, 60);
             this.Start.Name = "Start";
             this.Start.Size = new System.Drawing.Size(112, 34);
             this.Start.TabIndex = 15;
@@ -96,7 +96,7 @@ namespace WF_Expert_System
             // 
             // Reset
             // 
-            this.Reset.Location = new System.Drawing.Point(342, 125);
+            this.Reset.Location = new System.Drawing.Point(488, 125);
             this.Reset.Name = "Reset";
             this.Reset.Size = new System.Drawing.Size(112, 34);
             this.Reset.TabIndex = 16;
@@ -107,7 +107,7 @@ namespace WF_Expert_System
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(541, 20);
+            this.label2.Location = new System.Drawing.Point(829, 20);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 25);
             this.label2.TabIndex = 17;
@@ -116,9 +116,9 @@ namespace WF_Expert_System
             // checkedListBox
             // 
             this.checkedListBox.FormattingEnabled = true;
-            this.checkedListBox.Location = new System.Drawing.Point(16, 60);
+            this.checkedListBox.Location = new System.Drawing.Point(11, 60);
             this.checkedListBox.Name = "checkedListBox";
-            this.checkedListBox.Size = new System.Drawing.Size(264, 340);
+            this.checkedListBox.Size = new System.Drawing.Size(345, 340);
             this.checkedListBox.TabIndex = 13;
             // 
             // End_editting_btn
@@ -147,7 +147,7 @@ namespace WF_Expert_System
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 814);
+            this.ClientSize = new System.Drawing.Size(1118, 814);
             this.Controls.Add(this.Save_btn);
             this.Controls.Add(this.End_editting_btn);
             this.Controls.Add(this.label2);
