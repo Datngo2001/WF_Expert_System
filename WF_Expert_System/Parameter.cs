@@ -7,5 +7,7 @@ namespace WF_Expert_System
     {
         public string Name { get; set; }
         public bool Value { get; set; }
+        public bool Asked { get; set; }
+        public bool Satified { get; set; }
     }
 }

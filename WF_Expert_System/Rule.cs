@@ -6,6 +6,7 @@ namespace WF_Expert_System
 {
     class Rule
     {
+        public bool Considered { get; set; }
         protected List<Parameter> conditions = new List<Parameter>();
         public List<Parameter> Conditions
         {

@@ -27,47 +27,39 @@ namespace WF_Expert_System
             {
                 for (int i = 0; i < Base.Rules.Count; i++)
                 {
-                    if (isRelated(Base.Rules[i].Conditions))
+                    if (Base.Rules[i].Considered == false)
                     {
-                        bool satify = true;
-                        for (int j = 0; j < Base.Rules[i].Conditions.Count && satify; j++)
+
+                        for (int j = 0; j < Base.Rules[i].Conditions.Count; j++)
                         {
-                            if (isAsked(Base.Rules[i].Conditions[j]))
-                            {
-                                if (!SearchFact(Base.Rules[i].Conditions[j]))
-                                {
-                                    satify = false;
-                                }
-                            }
-                            else
+                            if (Base.Rules[i].Conditions[j].Asked == false)
                             {
                                 bool answer = askPeople(Base.Rules[i].Conditions[j]);
-                                if (Base.Rules[i].Conditions[j].Value != answer)
+                                Base.Rules[i].Conditions[j].Asked = true;
+
+                                Parameter fact = new Parameter();
+                                fact.Name = Base.Rules[i].Conditions[j].Name;
+                                fact.Value = answer;
+
+                                if(answer == Base.Rules[i].Conditions[j].Value)
                                 {
-                                    satify = false;
-                                    Parameter fact = new Parameter();
-                                    fact.Name = Base.Rules[i].Conditions[j].Name;
-                                    fact.Value = answer;
-                                    Facts.Add(fact);
+                                    Base.Rules[i].Conditions[j].Satified = true;
                                 }
-                                else
-                                {
-                                    Facts.Add(Base.Rules[i].Conditions[j]);
-                                }
+
+                                Facts.Add(fact);
                             }
                         }
-                        if (satify && !SearchFact(Base.Rules[i].Result))
+                        bool 
+                        int matchedCondition = 0;
+                        for (int j = 0; j < Base.Rules[i].Conditions.Count; j++)
                         {
-                            Facts.Add(Base.Rules[i].Result);
+                            Parameter askedCondition = askedConditions.Dequeue();
+
                         }
-                    }
-                    else
-                    {
-                        continue;
+                        Base.Rules[i].Considered = true;
                     }
                 }
             } while (FactIncrease());
-
         }
         public string ShowResult()
         {
@@ -93,6 +85,7 @@ namespace WF_Expert_System
         }
         protected bool askPeople(Parameter parameter)
         {
+            
             string question = "";
             question = "Ban co " + parameter.Name + " khong? (Co/Khong)";
             DialogResult answer = MessageBox.Show(question, "Question", MessageBoxButtons.YesNo);

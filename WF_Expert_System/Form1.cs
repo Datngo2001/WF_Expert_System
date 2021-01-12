@@ -48,6 +48,7 @@ namespace WF_Expert_System
             foreach (int indexChecked in checkedListBox.CheckedIndices)
             {
                 inferenceEngine.Base.Parameters[indexChecked].Value = true;
+                inferenceEngine.Base.Parameters[indexChecked].Asked = true;
             }
             inferenceEngine.Facts.AddRange(inferenceEngine.Base.Parameters);
             inferenceEngine.Start();
