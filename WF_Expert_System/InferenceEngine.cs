@@ -29,22 +29,14 @@ namespace WF_Expert_System
                 {
                     if (isRelated(Base.Rules[i].Conditions))
                     {
-                        bool satify = true;
-                        for (int j = 0; j < Base.Rules[i].Conditions.Count && satify; j++)
+                        int satifyCondition = 0;
+                        for (int j = 0; j < Base.Rules[i].Conditions.Count; j++)
                         {
-                            if (isAsked(Base.Rules[i].Conditions[j]))
-                            {
-                                if (!SearchFact(Base.Rules[i].Conditions[j]))
-                                {
-                                    satify = false;
-                                }
-                            }
-                            else
+                            if (!isAsked(Base.Rules[i].Conditions[j]))
                             {
                                 bool answer = askPeople(Base.Rules[i].Conditions[j]);
                                 if (Base.Rules[i].Conditions[j].Value != answer)
                                 {
-                                    satify = false;
                                     Parameter fact = new Parameter();
                                     fact.Name = Base.Rules[i].Conditions[j].Name;
                                     fact.Value = answer;
@@ -52,18 +44,19 @@ namespace WF_Expert_System
                                 }
                                 else
                                 {
+                                    satifyCondition++;
                                     Facts.Add(Base.Rules[i].Conditions[j]);
                                 }
+                            }else if (isExist(Base.Rules[i].Conditions[j]))
+                            {
+                                satifyCondition++;
                             }
                         }
-                        if (satify && !SearchFact(Base.Rules[i].Result))
+                        double percentSatify = (double)satifyCondition / (double)Base.Rules[i].Conditions.Count;
+                        if (percentSatify >= 0.5 && !isExist(Base.Rules[i].Result))
                         {
                             Facts.Add(Base.Rules[i].Result);
                         }
-                    }
-                    else
-                    {
-                        continue;
                     }
                 }
             } while (FactIncrease());
@@ -127,7 +120,7 @@ namespace WF_Expert_System
             }
             return false;
         }
-        protected bool SearchFact(Parameter parameter)
+        protected bool isExist(Parameter parameter)
         {
             for (int i = 0; i < Facts.Count; i++)
             {
@@ -142,7 +135,7 @@ namespace WF_Expert_System
         {
             for (int i = 0; i < conditions.Count; i++)
             {
-                if (SearchFact(conditions[i]))
+                if (isExist(conditions[i]))
                 {
                     return true;
                 }
